@@ -1,5 +1,5 @@
-# Ex02 Django ORM Web Application
-## Date: 
+# EX 02 Django ORM Web Application
+## Date: 26.09.24
 ## AIM
 To develop a Django application to store and retrieve data from a Book database using Object Relational Mapping(ORM).
 
@@ -22,32 +22,32 @@ Enter the code for admin.py and models.py
 Execute Django admin and create details for 10 books
 
 ## PROGRAM
+Models.py
 
-Include your code here
-models.py
 from django.db import models
 from django.contrib import admin
-class BookDetails(models.Model):
-   student_name=models.CharField(max_length=20);
-   id_no=models.IntegerField();
-   email=models.EmailField();
-   BookName=models.CharField(max_length=100,primary_key="True");
-   author_name=models.CharField(max_length=20);
-   Total_page=models.IntegerField();
+class Players(models.Model):
+    jrsy=models.CharField(max_length=20,help_text="Player Jrsy")
+    name=models.CharField(max_length=100)
+    cntry=models.CharField(max_length=100)
+    age=models.IntegerField()
+    height=models.IntegerField()
 
-class BookDetailsAdmin(admin.ModelAdmin):
-  list_display=("student_name","id_no","email","BookName","author_name","Total_page")
+class EmployeeAdmin(admin.ModelAdmin):
+    list_display=('jrsy','name','cntry','age','height')
 
 
-admin.py
+Admin.py
+
 from django.contrib import admin
-from .models import BookDetails,BookDetailsAdmin
-admin.site.register(BookDetails,BookDetailsAdmin)
+from .models import Players,EmployeeAdmin
+admin.site.register(Players,EmployeeAdmin)
 ## OUTPUT
-
 Include the screenshot of your admin page.
 ![image](https://github.com/230131249/ORM/assets/150232701/438dd236-4c07-4c88-89c5-86328b5acf17)
-
+![image](https://github.com/user-attachments/assets/30beafb8-1b4a-4af6-b27f-2bc0bc063e3d)
+## ENTITY RELATIONSHIP DIAGRAM:
+![image](https://github.com/user-attachments/assets/b045cb10-481f-4ae1-a1c8-449cb0f30676)
 
 ## RESULT
 Thus the program for creating a database using ORM hass been executed successfully
