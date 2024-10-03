@@ -26,28 +26,30 @@ Models.py
 
 from django.db import models
 from django.contrib import admin
-class Players(models.Model):
-    jrsy=models.CharField(max_length=20,help_text="Player Jrsy")
-    name=models.CharField(max_length=100)
-    cntry=models.CharField(max_length=100)
-    age=models.IntegerField()
-    height=models.IntegerField()
+from django.db import models
+from django.contrib import admin
 
-class EmployeeAdmin(admin.ModelAdmin):
-    list_display=('jrsy','name','cntry','age','height')
+class Bankloan(models.Model):
+    customerid= models.IntegerField(primary_key=True)
+    customerrate = models.IntegerField()
+    age = models.IntegerField()  
+    cust_no = models.IntegerField()
+    customerloan_purpose =models.CharField(max_length=500)
 
-
+class BankloanAdmin(admin.ModelAdmin):
+    list_display = ('customerid', 'customerrate', 'age', 'cust_no', 'customerloan_purpose')
 Admin.py
 
 from django.contrib import admin
-from .models import Players,EmployeeAdmin
-admin.site.register(Players,EmployeeAdmin)
+from .models import Bankloan, BankloanAdmin  
+admin.site.register(Bankloan, BankloanAdmin)
 ## OUTPUT
 Include the screenshot of your admin page.
-![image](https://github.com/230131249/ORM/assets/150232701/438dd236-4c07-4c88-89c5-86328b5acf17)
-![image](https://github.com/user-attachments/assets/30beafb8-1b4a-4af6-b27f-2bc0bc063e3d)
+![Screenshot 2024-10-03 114208](https://github.com/user-attachments/assets/bb40bbfb-43f3-403c-8015-eca9b85a19e9)
+
 ## ENTITY RELATIONSHIP DIAGRAM:
-![image](https://github.com/user-attachments/assets/b045cb10-481f-4ae1-a1c8-449cb0f30676)
+![Screenshot 2024-10-03 115057](https://github.com/user-attachments/assets/03bf4452-c954-4260-972a-8e57db2dac8e)
+
 
 ## RESULT
 Thus the program for creating a database using ORM hass been executed successfully
